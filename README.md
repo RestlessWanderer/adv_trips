@@ -1,21 +1,5 @@
-# Arctic Teabag Deux
+# RestlessWanderer's Adventure Motorcycle Trips
 
-![Ride](assets/Hero1.jpg)
+## Trips
 
-## Deets
-
-### Planned Dates
-
-Planning for a two week trip centered around the Dust 2 Dawson rally which is typically the third weekend of June.
-
-
-### More Details
-
-[Rough Itinerary](itinerary.md)
-
-[Points of Interest](poi.md)
-
-[Links With Good Info](trip_links.md)
-
-[Packing List](packing.md)
-
+[Alaska 2027](alaska.md)
