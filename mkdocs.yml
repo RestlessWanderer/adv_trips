@@ -1,5 +1,4 @@
 site_name: Adventure Trips
-watch: ["docs", "mkdocs.yml"]
 
 nav:
     - Home: index.md
@@ -43,5 +42,3 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.details
 
-nav:
-  - Home: index.md
