@@ -7,10 +7,17 @@ on:
   workflow_dispatch:  # Allows manual triggering from the Actions tab
 
 permissions:
-  contents: write  # Required to push to the gh-pages branch
+  contents: read
+  pages: write
+  id-token: write  # Required for OIDC-based GitHub Pages deployment
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,5 +37,25 @@ jobs:
           # Add any additional MkDocs plugins below, for example:
           # pip install mkdocs-git-revision-date-localized-plugin
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build MkDocs site
+        run: mkdocs build --strict --site-dir site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
+        id: deployment
+        uses: actions/deploy-pages@v5
