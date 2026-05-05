@@ -1,6 +1,6 @@
 # Alaska
 
-![Ride](assets/Hero1.jpg)
+![Ride](../assets/Hero1.jpg)
 
 ### Planned Dates
 

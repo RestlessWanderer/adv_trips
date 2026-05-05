@@ -2,8 +2,9 @@ site_name: Adventure Trips
 watch: ["docs", "mkdocs.yml"]
 
 nav:
+    - Home: docs/index.md
     - 2027:
-        - Alaska: alaska.md
+        - Alaska: docs/alaska.md
 
 theme:
   name: material
